@@ -1,0 +1,164 @@
+<html><head><style>
+
+h1, h2, h3, h4 {
+	margin-top: -50px;
+	padding-top: 70px;
+}	
+nav a {
+	color: #777;
+}
+nav a:hover {
+	color: #333;
+}
+nav ul {
+	padding-left: 5px;
+	padding-top: 5px;
+	margin-left: 5px;
+}
+li a {
+	text-decoration: none;
+}
+body {
+	font-family: 'Helvetica', 'Arial';
+	margin: 0 auto;
+	color: rgb(29, 31, 32);
+}
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding-left: 20px;
+	background: white;
+	z-index: 10;
+}
+nav {
+	position: fixed;
+	top: 50px;
+	left: 5;
+	width: 200px;
+	padding: 20px;
+	padding-left: 20px;
+	height: 100%;
+	border: 0px;
+	font-size: 12px;
+	padding-left: 0px;
+	border-right: 1px solid #e8e8e8;
+}
+nav li {
+	list-style-type: none;
+}
+nav li.h1 {
+	padding-left: 0px;
+}
+nav li.h2 {
+	padding-left: 5px;
+}
+nav li.h3 {
+	padding-left: 10px;
+}
+nav li.h4 {
+	padding-left: 15px;
+}
+nav li.h5,li.h6,li.h7,li.h8,li.h9,li.h10 {
+	padding-left: 20px;
+}
+main {
+	margin-right: auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	margin-left: 250px;
+	max-width: 800px;
+}
+table {
+	border-collapse: collapse;
+}
+th, td {
+	padding: 5px;
+	text-align: left;
+}
+tr {
+	border: 1px solid #d0d0d0;
+}
+@media (max-width: 768px) {
+	nav {
+		display: none;
+	}
+	main {
+		margin: 5px;
+	}
+}
+code {
+	background: rgba(29, 31, 32, .05);
+	display: inline-block;
+	padding: 5px;
+	border-radius: 5px;
+}
+header ul {
+	display: flex;
+	list-style: none;
+	padding: 0;
+	align-items: center;
+}
+header li {
+	margin-right: 10px;
+}
+header li:last-child {
+	margin-right: 0;
+}
+header li a {
+	display: block;
+	padding: 3px 6px;
+	text-decoration: none;
+	background-color: #dedbdb;
+	color: #2b2b2b;
+	border-radius: 5px;
+}
+header li a:hover {
+	background-color: #cdc9c9;
+}
+.para-link {
+	text-decoration: none;
+	color: #d2d2d2;
+	font-size: smaller;
+	position: relative;
+	left: 10px;
+}	
+</style>
+</head>
+<body>
+	<header>
+		<ul><li><a href="../README.md.html">Home</a></li><li current>Getting started</li><li><a href="reference.md.html">Usage reference</a></li></ul>
+	</header>
+	<nav>
+		<ul><li class="h1"><a href="#getting-started">Getting started</a></li></ul>
+	</nav>
+	<main>
+		<h1 id="getting-started">Getting started<a class="para-link" href="#getting-started">#</a></h1>
+
+<p>To convert your existing documentation, just install the tool using the latest binary:</p>
+
+<pre><code class="language-sh">wget https://github.com/oxcafedead/empedoc/releases/download/0.1.0/empedoc-linux-amd64
+chmod +x empedoc-linux-amd64
+</code></pre>
+
+<p>And then just run it from the project dir:</p>
+
+<pre><code class="language-sh">cd project/path
+path/to/binary/empedoc-linux-amd64
+</code></pre>
+
+<p>or in Windows:</p>
+
+<pre><code>cd d:/project/path
+d:/path/to/binary/empedoc-windows-amd64.exe
+</code></pre>
+
+<p>It will produce static HTML files and other required resources to <code>./docs_gen</code> dir in your project.<br>
+You can open <code>README.md.html</code> HTML file there to see how it looks.</p>
+
+<p>This tools allows only minimal customizations, preferring simplicity over extensibility.
+You might want to look for available command line arguments in <a href="./reference.md.html">reference</a> section.</p>
+
+	</main>
+</body>

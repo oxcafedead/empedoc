@@ -1,0 +1,173 @@
+<html><head><style>
+
+h1, h2, h3, h4 {
+	margin-top: -50px;
+	padding-top: 70px;
+}	
+nav a {
+	color: #777;
+}
+nav a:hover {
+	color: #333;
+}
+nav ul {
+	padding-left: 5px;
+	padding-top: 5px;
+	margin-left: 5px;
+}
+li a {
+	text-decoration: none;
+}
+body {
+	font-family: 'Helvetica', 'Arial';
+	margin: 0 auto;
+	color: rgb(29, 31, 32);
+}
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding-left: 20px;
+	background: white;
+	z-index: 10;
+}
+nav {
+	position: fixed;
+	top: 50px;
+	left: 5;
+	width: 200px;
+	padding: 20px;
+	padding-left: 20px;
+	height: 100%;
+	border: 0px;
+	font-size: 12px;
+	padding-left: 0px;
+	border-right: 1px solid #e8e8e8;
+}
+nav li {
+	list-style-type: none;
+}
+nav li.h1 {
+	padding-left: 0px;
+}
+nav li.h2 {
+	padding-left: 5px;
+}
+nav li.h3 {
+	padding-left: 10px;
+}
+nav li.h4 {
+	padding-left: 15px;
+}
+nav li.h5,li.h6,li.h7,li.h8,li.h9,li.h10 {
+	padding-left: 20px;
+}
+main {
+	margin-right: auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	margin-left: 250px;
+	max-width: 800px;
+}
+table {
+	border-collapse: collapse;
+}
+th, td {
+	padding: 5px;
+	text-align: left;
+}
+tr {
+	border: 1px solid #d0d0d0;
+}
+@media (max-width: 768px) {
+	nav {
+		display: none;
+	}
+	main {
+		margin: 5px;
+	}
+}
+code {
+	background: rgba(29, 31, 32, .05);
+	display: inline-block;
+	padding: 5px;
+	border-radius: 5px;
+}
+header ul {
+	display: flex;
+	list-style: none;
+	padding: 0;
+	align-items: center;
+}
+header li {
+	margin-right: 10px;
+}
+header li:last-child {
+	margin-right: 0;
+}
+header li a {
+	display: block;
+	padding: 3px 6px;
+	text-decoration: none;
+	background-color: #dedbdb;
+	color: #2b2b2b;
+	border-radius: 5px;
+}
+header li a:hover {
+	background-color: #cdc9c9;
+}
+.para-link {
+	text-decoration: none;
+	color: #d2d2d2;
+	font-size: smaller;
+	position: relative;
+	left: 10px;
+}	
+</style>
+</head>
+<body>
+	<header>
+		<ul><li current>Home</li><li><a href="docs/gettingstarted.md.html">Getting started</a></li><li><a href="docs/reference.md.html">Usage reference</a></li></ul>
+	</header>
+	<nav>
+		<ul><li class="h1"><a href="#empedoc">Empedoc</a></li><li class="h2"><a href="#when-to-use">When to use</a></li><li class="h2"><a href="#when-not-to-use">When not to use</a></li><li class="h2"><a href="#contribution">Contribution</a></li></ul>
+	</nav>
+	<main>
+		<h1 id="empedoc">Empedoc<a class="para-link" href="#empedoc">#</a></h1>
+
+<p><img src="./docs/empedocles.png" alt="Empedocles" title="Empedocles" /></p>
+
+<p>A fast and simple static documentation generator based on Markdown written in Go.</p>
+
+<p>This tool generates static documentation based on Markdown sources in a fast, efficient, and lightweight manner.<br>
+It requires no external dependencies and is designed to be both easy to use and quick to set up.</p>
+
+<h2 id="when-to-use">When to use<a class="para-link" href="#when-to-use">#</a></h2>
+
+<p>You might need this tool if this is relevant:</p>
+
+<ul>
+<li>you prefer to <a href="./docs/gettingstarted.md.html">get your HTML docs</a> rapidly 🔥</li>
+<li>you like a small runtime images (3Mb executable)</li>
+<li>zero dependencies is a plus for you (no runtime dependencies or any third-party libs, everything is already bundled in the executable)</li>
+<li>you don&rsquo;t need fancy features like interactive search, animations etc.</li>
+<li>you need a documentation with no JavaScript</li>
+<li>your documentation is a single README.md file in the project dir and multiple MD/static files in <code>./docs</code> or other dir.</li>
+</ul>
+
+<h2 id="when-not-to-use">When not to use<a class="para-link" href="#when-not-to-use">#</a></h2>
+
+<p>You might might want to consider other static documentation generators, if:</p>
+
+<ul>
+<li>you need more features: search, macros processing, advanced templates/theming, partial customizations.</li>
+<li>you want more interactive docs, containing javascript, animations, etc.</li>
+</ul>
+
+<h2 id="contribution">Contribution<a class="para-link" href="#contribution">#</a></h2>
+
+<p>This tool is written in Go. If you found a bug / want some really needed feature, please open the issue for it and we could discuss.</p>
+
+	</main>
+</body>
