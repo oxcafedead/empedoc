@@ -24,7 +24,7 @@ Set-ItemProperty -Path ".\empedoc-windows-amd64.exe" -Name "Attributes" -Value "
 ```
 
 It will produce static HTML files and other required resources to `./docs_gen` dir in your project.\
-You can open `README.md.html` HTML file there to see how it looks.
+You can open `index.html` HTML file there to see how it looks.
 
 This tools allows only minimal customizations, preferring simplicity over extensibility.
 You might want to look for available command line arguments in [reference](./reference.md) section.
