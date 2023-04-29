@@ -36,7 +36,7 @@ jobs:
       - name: Generate docs
         run:  |
           wget https://github.com/oxcafedead/empedoc/releases/download/v0.1.0/empedoc-linux-amd64
-          Chmod +x empedoc-linux-amd64
+          chmod +x empedoc-linux-amd64
           ./empedoc-linux-amd64
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
