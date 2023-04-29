@@ -424,8 +424,8 @@ func mdToHTML(doc ast.Node) []byte {
 		case *ast.Link:
 			if entering && bytes.Contains(n.Destination, []byte(indexMd)) {
 				n.Destination = bytes.Replace(n.Destination, []byte(indexMd), []byte("index.html"), 1)
-			} else if entering && bytes.HasSuffix(n.Destination, []byte(".md")) && !bytes.HasSuffix(n.Destination, []byte(".html")) {
-				n.Destination = append(n.Destination, []byte(".html")...)
+			} else if entering && bytes.Contains(n.Destination, []byte(".md")) && !bytes.Contains(n.Destination, []byte(".md.html")) {
+				n.Destination = bytes.ReplaceAll(n.Destination, []byte(".md"), []byte(".md.html"))
 			}
 		case *ast.Heading:
 			if !entering {
