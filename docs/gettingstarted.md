@@ -1,23 +1,26 @@
 # Getting started
 
-To convert your existing documentation, just install the tool using the latest binary:
+To convert your existing documentation, just download the binary and run it in the project directory:
 
 ```sh
+# Download
 wget https://github.com/oxcafedead/empedoc/releases/download/v0.1.3/empedoc-linux-amd64
+# Exec permissions
 chmod +x empedoc-linux-amd64
-```
-
-And then just run it from the project dir:
-
-```sh
-cd project/path
-path/to/binary/empedoc-linux-amd64
+# Run it!
+./empedoc-linux-amd64
 ```
 
 or in Windows:
+
 ```
-cd d:/project/path
-d:/path/to/binary/empedoc-windows-amd64.exe
+# Download
+Invoke-WebRequest -Uri "https://github.com/oxcafedead/empedoc/releases/download/v0.1.3/empedoc-windows-amd64.exe" -OutFile "empedoc-windows-amd64.exe"
+# Exec permissions
+Set-ItemProperty -Path ".\empedoc-windows-amd64.exe" -Name "IsReadOnly" -Value $false
+Set-ItemProperty -Path ".\empedoc-windows-amd64.exe" -Name "Attributes" -Value "Normal"
+# Run it!
+.\empedoc-windows-amd64.exe
 ```
 
 It will produce static HTML files and other required resources to `./docs_gen` dir in your project.\
