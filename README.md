@@ -28,3 +28,11 @@ You might might want to consider other static documentation generators, if:
 ## Contribution
 
 This tool is written in Go. If you found a bug / want some really needed feature, please open the issue for it and we could discuss.
+
+## Stability
+
+This is just an initial implementation. This is not intended to be used in production.\
+However, it might be suitable for small projects documentation generation.
+It is used already in [https://github.com/oxcafedead/barcode-reader-emulator](https://github.com/oxcafedead/barcode-reader-emulator) and couple of other non-public projects.
+
+Some breaking changes may be introduced in 0.x.x versions, however this will be done only as a last resort.

@@ -104,7 +104,13 @@ func preProcessMd(mdFiles *MarkdownFiles, file string) {
 }
 
 const HtmlTemplate = `<html><head><style>
-
+blockquote {
+	background-color: rgba(44, 124, 176,.1);
+    font-size: .9em;
+    margin: 10px 0;
+    padding: 20px;
+    border-left: 3px solid rgba(44, 124, 176,.5);
+}
 h1, h2, h3, h4 {
 	margin-top: -50px;
 	padding-top: 70px;
