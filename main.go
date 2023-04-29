@@ -254,6 +254,9 @@ func convertFile(mdFiles *MarkdownFiles, file string) {
 		log.Fatal(err)
 	}
 	outputPath := filepath.Join(fileOutputDir, file+".html")
+	if file == indexMd {
+		outputPath = filepath.Join(fileOutputDir, "index.html")
+	}
 	singleReadme := len(mdFiles.Content) == 1
 
 	outputBytes := []byte(``)
@@ -301,7 +304,7 @@ func getHeaderWithLinks(currentFile string, mdFiles *MarkdownFiles) string {
 				linkPath = "docs/" + linkPath
 			}
 			if filename == indexMd {
-				linkPath = "../" + linkPath
+				linkPath = "../index"
 			}
 			buf.WriteString("<li><a href=\"" + linkPath + ".html\">" + heading + "</a></li>")
 		} else {
@@ -419,7 +422,9 @@ func mdToHTML(doc ast.Node) []byte {
 	opts := html.RendererOptions{Flags: htmlFlags, RenderNodeHook: func(w io.Writer, node ast.Node, entering bool) (ast.WalkStatus, bool) {
 		switch n := node.(type) {
 		case *ast.Link:
-			if entering && bytes.HasSuffix(n.Destination, []byte(".md")) && !bytes.HasSuffix(n.Destination, []byte(".html")) {
+			if entering && bytes.Contains(n.Destination, []byte(indexMd)) {
+				n.Destination = bytes.Replace(n.Destination, []byte(indexMd), []byte("index.html"), 1)
+			} else if entering && bytes.HasSuffix(n.Destination, []byte(".md")) && !bytes.HasSuffix(n.Destination, []byte(".html")) {
 				n.Destination = append(n.Destination, []byte(".html")...)
 			}
 		case *ast.Heading:
