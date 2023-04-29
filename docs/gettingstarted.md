@@ -3,7 +3,7 @@
 To convert your existing documentation, just install the tool using the latest binary:
 
 ```sh
-wget https://github.com/oxcafedead/empedoc/releases/download/v0.1.2/empedoc-linux-amd64
+wget https://github.com/oxcafedead/empedoc/releases/download/v0.1.3/empedoc-linux-amd64
 chmod +x empedoc-linux-amd64
 ```
 
