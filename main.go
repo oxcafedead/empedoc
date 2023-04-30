@@ -104,13 +104,6 @@ func preProcessMd(mdFiles *MarkdownFiles, file string) {
 }
 
 const HtmlTemplate = `<html><head><style>
-blockquote {
-	background-color: rgba(44, 124, 176,.1);
-    font-size: .9em;
-    margin: 10px 0;
-    padding: 20px;
-    border-left: 3px solid rgba(44, 124, 176,.5);
-}
 h1, h2, h3, h4 {
 	margin-top: -50px;
 	padding-top: 70px;
@@ -135,26 +128,20 @@ body {
 	color: rgb(29, 31, 32);
 }
 header {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	padding-left: 20px;
-	background: white;
-	z-index: 10;
+	height: 50px;
+	margin-left: 5px;
+	padding-left: 5px;
 }
 nav {
-	position: fixed;
-	top: 50px;
-	left: 5;
 	width: 200px;
-	padding: 20px;
-	padding-left: 20px;
-	height: 100%;
-	border: 0px;
-	font-size: 12px;
+	float: left;
+	height: 100vh;
+	line-height: 150%;
 	padding-left: 0px;
 	border-right: 1px solid #e8e8e8;
+}
+header + nav {
+	height: calc(100vh - 70px);
 }
 nav li {
 	list-style-type: none;
@@ -175,11 +162,14 @@ nav li.h5,li.h6,li.h7,li.h8,li.h9,li.h10 {
 	padding-left: 20px;
 }
 main {
-	margin-right: auto;
-	margin-top: 50px;
-	margin-bottom: 50px;
 	margin-left: 250px;
-	max-width: 800px;
+	height: 100vh;
+	overflow-y: auto;
+	padding-right: 50px;
+	line-height: 1.5;
+}
+header + nav + main {
+	height: calc(100vh - 70px);
 }
 table {
 	border-collapse: collapse;
@@ -204,6 +194,8 @@ code {
 	display: inline-block;
 	padding: 5px;
 	border-radius: 5px;
+	padding: 2px;
+	margin: -2px;
 }
 header ul {
 	display: flex;
@@ -212,7 +204,8 @@ header ul {
 	align-items: center;
 }
 header li {
-	margin-right: 10px;
+	margin-right: 30px;
+	font-size: 120%;
 }
 header li:last-child {
 	margin-right: 0;
@@ -234,13 +227,18 @@ header li a:hover {
 	font-size: smaller;
 	position: relative;
 	left: 10px;
+	background: none;
+	border: none;
 }	
+main a {
+	color: #1d1f20;
+	background-color: #3333331a;
+	text-decoration: underline #b5b5b594;
+}
 </style>
 </head>
 <body>
-	<header>
-		{{header}}
-	</header>
+	{{header}}
 	<nav>
 		{{nav}}
 	</nav>
@@ -268,7 +266,7 @@ func convertFile(mdFiles *MarkdownFiles, file string) {
 	outputBytes := []byte(``)
 	headers := ""
 	if !singleReadme {
-		headers = getHeaderWithLinks(file, mdFiles)
+		headers = "<header>" + getHeaderWithLinks(file, mdFiles) + "</header>"
 	}
 	htmlWithParts := htmlTemplate
 	if len(htmlWithParts) == 0 {
