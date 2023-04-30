@@ -201,6 +201,7 @@ header ul {
 	display: flex;
 	list-style: none;
 	padding: 0;
+	padding-top: 10px;
 	align-items: center;
 }
 header li {
