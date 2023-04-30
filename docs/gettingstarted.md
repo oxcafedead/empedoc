@@ -4,7 +4,7 @@ To convert your existing documentation, just download the binary and run it in t
 
 ```sh
 # Download
-wget https://github.com/oxcafedead/empedoc/releases/download/v0.1.3/empedoc-linux-amd64
+wget https://github.com/oxcafedead/empedoc/releases/download/v0.1.4/empedoc-linux-amd64
 # Exec permissions
 chmod +x empedoc-linux-amd64
 # Run it!
@@ -15,7 +15,7 @@ or in Windows:
 
 ```
 # Download
-Invoke-WebRequest -Uri "https://github.com/oxcafedead/empedoc/releases/download/v0.1.3/empedoc-windows-amd64.exe" -OutFile "empedoc-windows-amd64.exe"
+Invoke-WebRequest -Uri "https://github.com/oxcafedead/empedoc/releases/download/v0.1.4/empedoc-windows-amd64.exe" -OutFile "empedoc-windows-amd64.exe"
 # Exec permissions
 Set-ItemProperty -Path ".\empedoc-windows-amd64.exe" -Name "IsReadOnly" -Value $false
 Set-ItemProperty -Path ".\empedoc-windows-amd64.exe" -Name "Attributes" -Value "Normal"
