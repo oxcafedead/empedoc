@@ -197,6 +197,16 @@ code {
 	padding: 2px;
 	margin: -2px;
 }
+blockquote {
+    background: #e5e6fc;
+    padding: 5px 10px;
+    margin: 0px;
+    border-left: 5px solid #d3d4f5;
+}
+blockquote p {
+    padding: 0px;
+    margin: 0px;
+}
 header ul {
 	display: flex;
 	list-style: none;
