@@ -12,17 +12,17 @@ It requires no external dependencies and is designed to be both easy to use and 
 You might need this tool if this is relevant:
 
 - you prefer to [get your HTML docs](./docs/gettingstarted.md) rapidly 🔥
-- you like a small runtime images (3Mb executable)
-- zero dependencies is a plus for you (no runtime dependencies or any third-party libs, everything is already bundled in the executable)
+- you're keen on small runtime images (3Mb)
+- zero dependencies is a plus for you (old-school standalone executable)
 - you don't need fancy features like interactive search, animations etc.
-- you need a documentation with no JavaScript
-- your documentation is a single README.md file in the project dir and multiple MD/static files in `./docs` or other dir.
+- no JavaScript
+- your documentation consists of pure Markdown files.
 
 ## When not to use
 
 You might might want to consider other static documentation generators, if:
 
-- you need more features: search, macros processing, advanced templates/theming, partial customizations.
+- you need more features: search, macros processing, advanced templates/theming, partial customizations
 - you want more interactive docs, containing javascript, animations, etc.
 
 ## Contribution
