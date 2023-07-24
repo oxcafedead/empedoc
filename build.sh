@@ -1,5 +1,7 @@
 #!/bin/bash
 
+PATH=$PATH:/usr/local/go/bin
+
 # set the output directory
 OUT_DIR=./bin
 

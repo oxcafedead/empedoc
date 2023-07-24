@@ -419,6 +419,23 @@ func copyFile(file string) {
 	}
 	outputPath := filepath.Join(fileOutputDir, file)
 
+	stat, err := os.Stat(inputPath)
+	if err != nil {
+		log.Fatal(err)
+	}
+	if stat.IsDir() {
+		directory, err := os.ReadDir(inputPath)
+		if err != nil {
+			log.Fatal(err)
+		}
+		for _, dirfile := range directory {
+			if err := os.MkdirAll(filepath.Join(outputDir, inputPath), 0755); err != nil {
+				log.Fatal(err)
+			}
+			copyFile(file + "/" + dirfile.Name())
+		}
+		return
+	}
 	inputBytes, err := os.ReadFile(inputPath)
 	if err != nil {
 		log.Fatal(err)
